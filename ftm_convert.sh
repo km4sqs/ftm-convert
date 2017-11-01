@@ -1,6 +1,6 @@
 #!/bin/bash
 # ftm_convert
-versionmsg="v1.0"
+versionmsg="v1.0.1"
 # Written by: Joseph Botto - KM4SQS (km4sqs@gmail.com)
 # Written on: 10-27-2017 
 # Purpose: Script to convert a CHIRP .csv to an ADMS-9 .csv, to inport into ADMS-9 
@@ -20,7 +20,8 @@ versionmsg="v1.0"
 #
 #
 # Changelog
-# 10-27-2017: v1.0 - Initial release
+# 11-01-2017: v1.0.1 - Fixed a typo: tr_offsetamount, NOT tr_setamount! DOH!
+# 10-27-2017: v1.0   - Initial release
 #
 
 # Set some tput colors
