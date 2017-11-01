@@ -124,7 +124,7 @@ tempinput=$(mktemp)
 
 awk '{
 FS=",";
-OFMT="%4.5g";
+#OFMT="%4.5g";
 OFS=","
 
 location=$1
@@ -148,11 +148,11 @@ rxfreq=sprintf("%.5f",initrx);
 tr_offsetamount=sprintf("%.5f",offsetamount);
 
 if ( offsetdir ~ "+" ) {
-        inittx = initrx + offsetamount ;
+        inittx = initrx + tr_offsetamount ;
         offsetdir = offsetdir"RPT";
 }
 else if ( offsetdir ~ "-" ) {
-        inittx = initrx - offsetamount ;
+        inittx = initrx - tr_offsetamount ;
         offsetdir = offsetdir"RPT";
 }
 else {
@@ -160,9 +160,10 @@ else {
         offsetdir = "OFF";
 }
 
-if ( tr_offsetamount!="5.00000" && tr_setamount!="0.60000" ) {
-	tr_offsetamount = "0.00000";
-}       
+if ( tr_offsetamount != "5.00000" && tr_offsetamount != "0.60000" ) {
+	tr_offsetamount = "0.00000"
+}
+
 
 txfreq=sprintf("%.5f",inittx);
 
